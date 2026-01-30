@@ -19,13 +19,11 @@ export class AuthController {
     return this.authService.register(dto);
   }
   
-  /*
-  Para agregar Admin
+  /*Para agregar Admin*/
   @Post('seed-admin')
   createAdmin() {
     return this.authService.createAdmin();
   }
-  */
 
   @UseGuards(JwtAuthGuard)
   @Get('me')
