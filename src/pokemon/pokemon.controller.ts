@@ -5,7 +5,9 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { PokemonService } from './pokemon.services';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @Controller('pokemon')
 export class PokemonController {
   constructor(private readonly pokemonService: PokemonService) {}

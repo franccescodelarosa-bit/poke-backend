@@ -24,7 +24,8 @@ export class AuthController {
   createAdmin() {
     return this.authService.createAdmin();
   }
-  
+
+  @UseGuards(JwtAuthGuard)
   @Get('me')
   async me(@Request() req) {
     return this.authService.me(req.user.userId);
